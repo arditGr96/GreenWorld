@@ -1,0 +1,29 @@
+﻿@model List<Post>
+
+<section class="news-section py-5 position-relative">
+    <div class="container">
+        <h2 class="text-center mb-5 text-white news-header">📰 Latest News</h2>
+        <div class="row g-4">
+            @foreach (var news in Model.OrderByDescending(x => x.Id))
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="news-card">
+                        @if (!string.IsNullOrEmpty(news.ImagePath))
+                        {
+                            <div class="news-image-wrapper">
+                                <img src="@news.ImagePath" alt="@news.Title" class="news-image" />
+                            </div>
+                        }
+                        <div class="news-content">
+                            <h5 class="news-title">@news.Title</h5>
+                            <p class="news-excerpt">
+                                @(news.Content.Length > 100 ? news.Content.Substring(0, 100) + "..." : news.Content)
+                            </p>
+                            <a asp-controller="Home" asp-action="PostById" asp-route-id="@news.Id" class="read-more">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

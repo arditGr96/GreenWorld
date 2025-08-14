@@ -1,0 +1,70 @@
+﻿@model Post
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Create New Post</h4>
+        </div>
+        <div class="card-body">
+
+            <form asp-action="Create" enctype="multipart/form-data">
+                <!-- Main Fields -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Category</label>
+                    <select asp-for="CategoryId" class="form-control">
+                        <option value="">-- Select Category --</option>
+                        @foreach (var category in ViewBag.Category as List<Category>)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Enter post title" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">SubTitle</label>
+                    <input asp-for="SubTitle" class="form-control" placeholder="Enter post subtitle" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Content</label>
+                    <textarea asp-for="Content" class="form-control" rows="5" placeholder="Write your post content here"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Main Image (optional)</label>
+                    <input type="file" name="imageFile" class="form-control" />
+                </div>
+
+                <hr />
+
+                <!-- Dynamically added fields container -->
+                <div id="dynamicFields" class="mb-3"></div>
+
+                <!-- Buttons to add dynamic fields -->
+                <div class="mb-4">
+                    <button type="button" class="btn btn-outline-secondary me-2" id="addContent">
+                        <i class="bi bi-file-text"></i> Add Content
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" id="addImage">
+                        <i class="bi bi-image"></i> Add Image
+                    </button>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">
+                    <i class="bi bi-check-circle"></i> Save Post
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+

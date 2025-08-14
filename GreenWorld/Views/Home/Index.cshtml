@@ -1,0 +1,81 @@
+﻿@model List<Post>
+
+<section id="home" class="hero-main">
+    <!-- Scrolling world background -->
+    <div class="world-background"></div>
+
+    <!-- Central rotating globe -->
+    <div class="central-globe">
+        <i class="fas fa-globe-americas"></i>
+    </div>
+
+    <!-- Main content container -->
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="d-flex justify-content-center align-items-center">
+                <span class="p-2 animate-on-scroll" style="font-size:6rem;">
+                    🌍
+                </span>
+                <h1 class="hero-title animate-on-scroll ms-2">Green World</h1>
+            </div>
+
+                <p class="hero-subtitle animate-on-scroll">
+                    Your trusted source for environmental news, sustainability insights, and eco-friendly solutions for a greener tomorrow.
+                </p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#news" class="btn-hero btn-hero-primary">
+                        <i class="fas fa-newspaper me-2"></i>Latest News
+                    </a>
+                    <a href="#environment" class="btn-hero btn-hero-outline">
+                        <i class="fas fa-globe me-2"></i>Our Mission
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="fas fa-newspaper stat-icon"></i>
+                    <span class="stat-number">1,250+</span>
+                    <div class="stat-label">News Articles</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <span class="stat-number">50K+</span>
+                    <div class="stat-label">Community Members</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="fas fa-tree stat-icon"></i>
+                    <span class="stat-number">2M+</span>
+                    <div class="stat-label">Trees Planted</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="fas fa-globe stat-icon"></i>
+                    <span class="stat-number">195</span>
+                    <div class="stat-label">Countries Covered</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured News Section -->
+<section id="news" class="hero-section">
+    @Html.Partial("_Article", Model)
+</section>
+
+<!-- Latest News Grid -->
+<section class="news-section py-5 position-relative">
+    @Html.Partial("_LatestNewsGrid", Model)
+</section>

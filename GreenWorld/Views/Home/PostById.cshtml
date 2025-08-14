@@ -1,0 +1,164 @@
+﻿@model Post
+@{
+    var ads = ViewBag.Ads as Dictionary<string, string> ?? new Dictionary<string, string>();
+}
+
+<div class="container-fluid px-4 py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-10">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="article-hero">
+                        <img src="@Model.ImagePath" class="img-fluid w-100" style="height:500px; object-fit:cover;" alt="@Model.Title" />
+                        @if (!string.IsNullOrEmpty(Model.Title))
+                        {
+                            <div class="article-hero-overlay">
+                                <div>
+                                    <h1 class="article-title">@Model.Title</h1>
+                                    <div class="article-meta">
+                                        <div class="meta-item">
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span>@DateTime.Now.ToString("MMM dd, yyyy")</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="far fa-clock"></i>
+                                            <span>8 min read</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <i class="far fa-eye"></i>
+                                            <span>1.2K views</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <article class="content-wrapper">
+                        
+               
+                        @if (!string.IsNullOrEmpty(Model.SubTitle))
+                        {
+                            <div class="article-subtitle">
+                                <i class="fas fa-quote-left me-2"></i>@Model.SubTitle
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Content))
+                        {
+                            <div class="content-section">
+                                <p class="article-content">@Model.Content</p>
+
+                                @if (ads != null && ads.ContainsKey("middle") && !string.IsNullOrEmpty(ads["middle"]))
+                                {
+                                    <div class="ad-container">
+                                        @Html.Raw(ads["middle"])
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="ad-container mb-4 d-none"></div> <!-- hidden if no ad -->
+                                }
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Content2))
+                        {
+                            <div class="content-section">
+                                <p class="article-content">@Model.Content2</p>
+
+                                @if (ads != null && ads.ContainsKey("middle2") && !string.IsNullOrEmpty(ads["middle2"]))
+                                {
+                                    <div class="ad-container">
+                                        @Html.Raw(ads["middle2"])
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="ad-container mb-4 d-none"></div> <!-- hidden if no ad -->
+                                }
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.ImagePath3))
+                        {
+                            <div class="content-section">
+                                <img src="@Model.ImagePath3" class="img-fluid article-image w-100" style="object-fit:cover; max-height:400px;" alt="Article Image" />
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Content3))
+                        {
+                            <div class="content-section">
+                                <p class="article-content">@Model.Content3</p>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.Content4))
+                        {
+                            <div class="content-section">
+                                <p class="article-content">@Model.Content4</p>
+                            </div>
+                        }
+
+                        <!-- Social Share Section -->
+                        <div class="content-section">
+                            <div class="d-flex align-items-center justify-content-between p-4 bg-light rounded-3">
+                                <div>
+                                    <h6 class="fw-bold mb-1">Share this article</h6>
+                                    <small class="text-muted">Spread the knowledge!</small>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-info btn-sm">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-success btn-sm">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </article>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="sticky-sidebar">
+                        <h5 class="sidebar-title">
+                            <i class="fas fa-star text-warning me-2"></i>Sponsored
+                        </h5>
+                        @if (ads != null && ads.ContainsKey("sidebar") && !string.IsNullOrEmpty(ads["sidebar"]))
+                        {
+                            <div class="ad-container">
+                                @Html.Raw(ads["sidebar"])
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="ad-container mb-4 d-none"></div> <!-- hidden if no ad -->
+                        }
+                        <!-- Newsletter Signup stays the same -->
+                        <div class="sidebar-ad">
+                            <h6 class="fw-bold text-center mb-3">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                Stay Updated
+                            </h6>
+                            <p class="text-muted small text-center mb-3">Get our latest articles delivered to your inbox</p>
+                            <div class="d-grid gap-2">
+                                <input type="email" class="form-control" placeholder="Your email">
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-paper-plane me-2"></i>Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

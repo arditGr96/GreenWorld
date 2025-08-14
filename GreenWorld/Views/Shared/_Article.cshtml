@@ -1,0 +1,79 @@
+﻿@model List<Post>   
+@{
+    var index = 1;
+}
+<div class="floating-element floating-1">
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="30" fill="white" />
+    </svg>
+</div>
+<div class="floating-element floating-2">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="8" fill="white" />
+    </svg>
+</div>
+<div class="floating-element floating-3">
+    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="25,5 45,40 5,40" fill="white" />
+    </svg>
+</div>
+
+<div class="container-fluid px-4">
+    <div class="row g-4 align-items-stretch">
+        <!-- Featured Post -->
+        <a asp-action="PostById" asp-route-id="@Model.OrderByDescending(x=>x.Id).First().Id" class="text-decoration-none">
+            <div class="col-lg-8">
+                <div class="featured-card">
+                    <div class="featured-image">
+                        <img src="@Model.OrderByDescending(x=>x.Id).First().ImagePath" class="w-100 h-100" style="object-fit:cover;" alt="Climate Change Impact" />
+                        <div class="hero-content-overlay">
+                            <div class="featured-content w-100">
+                                <div class="mb-3">
+                                    <span class="featured-badge">🌟 Featured Story</span>
+                                </div>
+                                <div class="text-decoration-none w-100">
+                                    <h1 class="featured-title">
+                                        @Model.OrderByDescending(x => x.Id).First().Title
+                                    </h1>
+                                </div>
+                                <a asp-action="PostByCategoryId" asp-route-id="@Model.OrderByDescending(x=>x.Id).First().CategoryId" class="category-link d-inline-block mb-2">
+                                    <h5>    
+                                        @Model.OrderByDescending(x => x.Id).First().Category.Name
+                                    </h5>
+                                </a>
+                                <p class="featured-excerpt">
+                                    @Model.OrderByDescending(x => x.Id).First().SubTitle
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        </a>
+
+        <div class="col-lg-4">
+            <div class="stories-sidebar">
+                <h3 class="stories-title">🔥 Trending Now</h3>
+                <div class="d-flex flex-column">
+                    @foreach(var el in Model.OrderByDescending(x=>x.Id).Skip(1))
+                    {
+                        <a asp-controller="Home" asp-action="PostById" asp-route-id="@el.Id" class="story-card text-decoration-none d-flex align-items-start position-relative">
+                            <span class="story-number">@index</span>
+                            <div class="story-image-wrapper">
+                                <img src="@el.ImagePath"/>
+                            </div>
+                            <div class="story-content">
+                                <h6 class="story-card-title">@el.Title</h6>
+                                <p class="story-card-excerpt">
+                                    @el.SubTitle
+                                </p>
+                            </div>
+                        </a>
+                        index++;
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
