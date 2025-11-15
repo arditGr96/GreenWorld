@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Project Structure";
+}
+<div class="container mt-4">
+
+    <!-- =======================
+         LEFT SIDEBAR MENU
+    ======================== -->
+    <aside class="wp-sidebar">
+        <ul class="wp-menu">
+            <li><a href="#WP1">WP1 – Management</a></li>
+            <li><a href="#WP2">WP2 – Governance</a></li>
+            <li><a href="#WP3">WP3 – Admin Practices</a></li>
+            <li><a href="#WP4">WP4 – Education</a></li>
+            <li><a href="#WP5">WP5 – QA & Evaluation</a></li>
+            <li><a href="#WP6">WP6 – Dissemination</a></li>
+        </ul>
+    </aside>
+
+    <!-- =======================
+         CONTENT
+    ======================== -->
+    <section class="content-section animate-on-scroll wp-content">
+
+        <h2 class="section-title">Project Structure</h2>
+        <div class="section-divider"></div>
+
+        <p class="section-text mb-5">
+            UNIGreen is organized into six interconnected Work Packages (WPs).
+            Explore each WP in detail below.
+        </p>
+
+        <!-- ===================================================
+             WP1
+        =================================================== -->
+        <div id="WP1" class="wp-section">
+            <h3 class="wp-title">WP1: Project Management and Coordination</h3>
+            <p><strong>Lead:</strong> AAB College (Kosovo)</p>
+            <p>
+                Ensures effective project planning, communication, financial oversight and partner coordination.
+            </p>
+            <ul class="clean-list">
+                <li>Coordination and administrative oversight.</li>
+                <li>Financial management.</li>
+                <li>Monitoring project progress.</li>
+                <li>Communication among partners.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider mb-5"></div>
+
+        <!-- ===================================================
+             WP2
+        =================================================== -->
+        <div id="WP2" class="wp-section">
+            <h3 class="wp-title">WP2: Sustainability Governance</h3>
+            <p><strong>Lead:</strong> International Hellenic University (Greece)</p>
+            <p>Develops policy frameworks for sustainability-driven university governance.</p>
+            <ul class="clean-list">
+                <li>Assessment of current models.</li>
+                <li>Policy development.</li>
+                <li>Integration of sustainability principles.</li>
+                <li>Training for leadership teams.</li>
+            </ul>
+        </div>
+
+        <div class="section-divider mb-5"></div>
+
+        <!-- ===================================================
+             WP3
+        =================================================== -->
+        <div id="WP3" class="wp-section">
+            <h3 class="wp-title">WP3: Sustainable Administrative Practices</h3>
+            <p><strong>Lead:</strong> PSW University (Poland)</p>
+            <p>Implements sustainable administration, reduced waste, green procurement and efficiency models.</p>
+        </div>
+
+        <div class="section-divider mb-5"></div>
+
+        <!-- ===================================================
+             WP4
+        =================================================== -->
+        <div id="WP4" class="wp-section">
+            <h3 class="wp-title">WP4: Sustainability Education and Training</h3>
+            <p><strong>Lead:</strong> European University of Tirana (Albania)</p>
+            <p>Develops courses, MOOCs, and educational resources for sustainability.</p>
+        </div>
+
+        <div class="section-divider mb-5"></div>
+
+        <!-- ===================================================
+             WP5
+        =================================================== -->
+        <div id="WP5" class="wp-section">
+            <h3 class="wp-title">WP5: Quality Assurance and Evaluation</h3>
+            <p><strong>Lead:</strong> New York University Tirana (Albania)</p>
+            <p>Monitors quality and evaluates project outcomes.</p>
+        </div>
+
+        <div class="section-divider mb-5"></div>
+
+        <!-- ===================================================
+             WP6
+        =================================================== -->
+        <div id="WP6" class="wp-section">
+            <h3 class="wp-title">WP6: Dissemination, Exploitation, and Sustainability</h3>
+            <p><strong>Lead:</strong> AAB College (Kosovo)</p>
+            <p>Maximizes visibility, outreach, and long-term impact of the project.</p>
+        </div>
+
+    </section>
+</div>
+
+<!-- =======================
+     JAVASCRIPT FOR SCROLL ACTIVE LINK
+======================= -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".wp-section");
+        const menuLinks = document.querySelectorAll(".wp-menu a");
+
+        function onScroll() {
+            let scrollPos = window.scrollY + 150;
+
+            sections.forEach(section => {
+                if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                    menuLinks.forEach(link => link.classList.remove("active"));
+                    document.querySelector('.wp-menu a[href="#' + section.id + '"]').classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", onScroll);
+        onScroll();
+    });
+</script>

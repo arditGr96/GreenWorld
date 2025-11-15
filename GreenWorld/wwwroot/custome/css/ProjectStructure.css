@@ -1,0 +1,130 @@
+﻿/* ===========================================
+   PROJECT STRUCTURE PAGE (SIDEBAR + CONTENT)
+   Matches global UNIGreen design
+=========================================== */
+
+/* Sidebar */
+.wp-sidebar {
+    position: fixed;
+    top: 140px;
+    left: 40px;
+    width: 240px;
+    padding-right: 25px;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.wp-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .wp-menu li {
+        margin-bottom: 18px;
+    }
+
+    .wp-menu a {
+        text-decoration: none;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #222;
+        display: block;
+        padding: 6px 0;
+        position: relative;
+        transition: 0.2s ease;
+    }
+
+        .wp-menu a:hover {
+            color: var(--primary-green);
+            transform: translateX(5px);
+        }
+
+        /* Active link highlight */
+        .wp-menu a.active {
+            color: var(--primary-green);
+            font-weight: 700;
+            transform: translateX(6px);
+        }
+
+            .wp-menu a.active::before {
+                content: "";
+                position: absolute;
+                left: -18px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 20px;
+                background: var(--primary-green);
+                border-radius: 10px;
+            }
+
+/* Content layout */
+.wp-content {
+    margin-left: 320px;
+    padding-bottom: 80px;
+}
+
+.wp-section {
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    animation: fadeInUp 0.7s ease both;
+}
+
+/* Titles */
+.wp-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--forest-dark);
+    margin-bottom: 10px;
+}
+
+.wp-section p {
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* Lists */
+.clean-list {
+    margin-top: 14px;
+}
+
+    .clean-list li {
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #333;
+        position: relative;
+        padding-left: 18px;
+    }
+
+        .clean-list li::before {
+            content: "•";
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+/* Divider */
+.wp-content .section-divider {
+    margin: 20px 0 40px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .wp-sidebar {
+        display: none;
+    }
+
+    .wp-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .wp-title {
+        font-size: 1.6rem;
+    }
+}

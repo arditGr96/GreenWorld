@@ -1,81 +1,303 @@
-﻿@model List<Post>
+﻿@{
+    ViewData["Title"] = "Home";
+}
 
-<section id="home" class="hero-main">
-    <!-- Scrolling world background -->
-    <div class="world-background"></div>
+<!-- HERO -->
+<section class="hero full-height-section">
+    <div class="hero__background-world"></div>
 
-    <!-- Central rotating globe -->
-    <div class="central-globe">
-        <i class="fas fa-globe-americas"></i>
-    </div>
+    <div class="hero__central-globe">🌍</div>
 
-    <!-- Main content container -->
-    <div class="hero-container">
-        <div class="hero-content">
-            <div class="d-flex justify-content-center align-items-center">
-                <span class="p-2 animate-on-scroll" style="font-size:6rem;">
-                    🌍
-                </span>
-                <h1 class="hero-title animate-on-scroll ms-2">Green World</h1>
-            </div>
+    <img src="/images/eco-leaf.svg" class="hero__eco hero__eco--1" />
+    <img src="/images/eco-leaf.svg" class="hero__eco hero__eco--2" />
+    <img src="/images/eco-leaf.svg" class="hero__eco hero__eco--3" />
 
-                <p class="hero-subtitle animate-on-scroll">
-                    Your trusted source for environmental news, sustainability insights, and eco-friendly solutions for a greener tomorrow.
-                </p>
-                <div class="hero-buttons animate-on-scroll">
-                    <a href="#news" class="btn-hero btn-hero-primary">
-                        <i class="fas fa-newspaper me-2"></i>Latest News
-                    </a>
-                    <a href="#environment" class="btn-hero btn-hero-outline">
-                        <i class="fas fa-globe me-2"></i>Our Mission
-                    </a>
-                </div>
-            
+    <div class="hero__container">
+        <h1 class="hero__title animate-on-scroll">
+            Transforming Higher Education<br />
+            for a Greener Tomorrow
+        </h1>
+
+        <div class="hero__grid animate-on-scroll">
+            <p class="hero__text">
+                UNIGreen is an Erasmus+ Capacity Building in Higher Education (CBHE) project that empowers
+                universities in the Western Balkans to embed sustainability across governance, administration,
+                and education.
+            </p>
+
+            <p class="hero__text">
+                By rethinking how institutions operate, teach, and engage with their communities, UNIGreen
+                fosters a new generation of higher education institutions contributing to environmental responsibility
+                and sustainable development.
+            </p>
+        </div>
+
+        <div class="hero__actions animate-on-scroll">
+            <a href="#structure" class="hero__btn hero__btn--primary">Explore Work Packages</a>
+            <a href="#events-news" class="hero__btn hero__btn--outline">Events &amp; News</a>
+        </div>
+
+        <div class="hero__meta animate-on-scroll">
+            🕓 Implementation Period: 2025–2028<br />
+            🌍 Regions: Kosovo, Albania, Poland, Greece, Bulgaria, Lithuania<br />
+            💶 Funding Programme: Erasmus+ CBHE – Strand 1
         </div>
     </div>
 </section>
-<!-- Stats Section -->
-<section class="stats-section">
+
+<!-- PROJECT STRUCTURE -->
+<section id="structure" class="content-section wp animate-on-scroll">
     <div class="container">
+        <h2 class="section-title">Project Structure</h2>
+        <div class="section-divider"></div>
+
+        <p class="section-text mb-4">
+            UNIGreen is organized into six interconnected Work Packages (WPs). Click on any WP to view full details.
+        </p>
+
+        <div class="row g-4 wp__grid">
+            <div class="col-md-6">
+                <a href="/ProjectStructure#WP1" class="wp-card-link">
+                    <div class="wp-card h-100">
+                        <h5 class="wp-card__title">WP1: Project Management and Coordination</h5>
+                        <p class="wp-card__meta">Lead: AAB College (Kosovo)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/ProjectStructure#WP2" class="wp-card-link">
+                    <div class="wp-card h-100">
+                        <h5 class="wp-card__title">WP2: Sustainability Governance</h5>
+                        <p class="wp-card__meta">Lead: International Hellenic University (Greece)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/ProjectStructure#WP3" class="wp-card-link">
+                    <div class="wp-card h-100">
+                        <h5 class="wp-card__title">WP3: Sustainable Administrative Practices</h5>
+                        <p class="wp-card__meta">Lead: PSW University (Poland)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/ProjectStructure#WP4" class="wp-card-link">
+                    <div class="wp-card h-100">
+                        <h5 class="wp-card__title">WP4: Sustainability Education and Training</h5>
+                        <p class="wp-card__meta">Lead: European University of Tirana (Albania)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/ProjectStructure#WP5" class="wp-card-link">
+                    <div class="wp-card h-100">
+                        <h5 class="wp-card__title">WP5: Quality Assurance and Evaluation</h5>
+                        <p class="wp-card__meta">Lead: NYU Tirana (Albania)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/ProjectStructure#WP6" class="wp-card-link">
+                    <div class="wp-card h-100">
+                        <h5 class="wp-card__title">WP6: Dissemination, Exploitation, and Sustainability</h5>
+                        <p class="wp-card__meta">Lead: AAB College (Kosovo)</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTS & NEWS -->
+<section id="events-news" class="content-section updates animate-on-scroll">
+    <div class="container">
+        <h2 class="section-title">Events &amp; News</h2>
+        <div class="section-divider"></div>
+        <p class="section-text mb-5">
+            Stay up to date with UNIGreen activities, project milestones, and partner initiatives.
+        </p>
+
         <div class="row g-4">
-            <div class="col-md-3">
-                <div class="stat-card">
-                    <i class="fas fa-newspaper stat-icon"></i>
-                    <span class="stat-number">1,250+</span>
-                    <div class="stat-label">News Articles</div>
+            <!-- EVENTS -->
+            <div class="col-md-6">
+                <h4 class="updates__column-title">📅 Upcoming Events</h4>
+
+                <div class="event-card">
+                    <span class="event-card__date">15 FEB 2025</span>
+                    <h5 class="event-card__title">UNIGreen Kick-Off Meeting</h5>
+                    <p class="event-card__text">
+                        Official project opening with partners from across Europe.
+                    </p>
+                    <a class="event-card__link" href="#">Read More →</a>
+                </div>
+
+                <div class="event-card">
+                    <span class="event-card__date">05 MAR 2025</span>
+                    <h5 class="event-card__title">Sustainability Governance Workshop</h5>
+                    <p class="event-card__text">
+                        Training session for WP2 governance frameworks.
+                    </p>
+                    <a class="event-card__link" href="#">Read More →</a>
+                </div>
+
+                <div class="event-card">
+                    <span class="event-card__date">22 APR 2025</span>
+                    <h5 class="event-card__title">Green Curriculum Development Forum</h5>
+                    <p class="event-card__text">
+                        Academic forum for universities to design green courses.
+                    </p>
+                    <a class="event-card__link" href="#">Read More →</a>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="stat-card">
-                    <i class="fas fa-users stat-icon"></i>
-                    <span class="stat-number">50K+</span>
-                    <div class="stat-label">Community Members</div>
+
+            <!-- NEWS -->
+            <div class="col-md-6">
+                <h4 class="updates__column-title">📰 Latest News</h4>
+
+                <div class="news-card">
+                    <h5 class="news-card__title">UNIGreen Officially Launched</h5>
+                    <p class="news-card__text">
+                        The Erasmus+ CBHE project kicks off to support green transformation in HEIs.
+                    </p>
+                    <a class="news-card__link" href="#">Read More →</a>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stat-card">
-                    <i class="fas fa-tree stat-icon"></i>
-                    <span class="stat-number">2M+</span>
-                    <div class="stat-label">Trees Planted</div>
+
+                <div class="news-card">
+                    <h5 class="news-card__title">Partners Meet in Tirana</h5>
+                    <p class="news-card__text">
+                        WP4 leaders host the first collaborative curriculum development session.
+                    </p>
+                    <a class="news-card__link" href="#">Read More →</a>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stat-card">
-                    <i class="fas fa-globe stat-icon"></i>
-                    <span class="stat-number">195</span>
-                    <div class="stat-label">Countries Covered</div>
+
+                <div class="news-card">
+                    <h5 class="news-card__title">Digital Platform Prototype Released</h5>
+                    <p class="news-card__text">
+                        The project unveils the first prototype for resource and knowledge sharing.
+                    </p>
+                    <a class="news-card__link" href="#">Read More →</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Featured News Section -->
-<section id="news" class="hero-section">
-    @Html.Partial("_Article", Model)
+<!-- EXPECTED RESULTS -->
+<section id="results-page" class="results content-section animate-on-scroll">
+    <div class="container">
+        <h2 class="section-title text-center">Expected Results</h2>
+        <div class="section-divider"></div>
+
+        <p class="section-text text-center mb-5">
+            By the end of the project, UNIGreen will deliver a comprehensive set of outputs aimed at transforming
+            governance, administration, teaching, and collaboration across partner universities.
+        </p>
+
+        <div class="row g-4 results__grid">
+            <div class="col-md-6 col-lg-4">
+                <div class="result-card">
+                    <div class="result-card__icon">📊</div>
+                    <h5 class="result-card__title">Sustainability Self-Assessment Reports</h5>
+                    <p class="result-card__text">Detailed sustainability assessments for all partner HEIs.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="result-card">
+                    <div class="result-card__icon">🏛️</div>
+                    <h5 class="result-card__title">Governance Policy Frameworks</h5>
+                    <p class="result-card__text">Guidelines and frameworks for sustainable institutional transformation.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="result-card">
+                    <div class="result-card__icon">🧩</div>
+                    <h5 class="result-card__title">Sustainability Education Package</h5>
+                    <p class="result-card__text">Courses, MOOCs, handbooks, and teaching materials.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="result-card">
+                    <div class="result-card__icon">🌐</div>
+                    <h5 class="result-card__title">UNIGreen Digital Platform</h5>
+                    <p class="result-card__text">A collaborative portal for sharing resources and project outputs.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="result-card">
+                    <div class="result-card__icon">💡</div>
+                    <h5 class="result-card__title">Good Practice Compendium</h5>
+                    <p class="result-card__text">A curated collection of effective sustainable HEI models.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="result-card">
+                    <div class="result-card__icon">🎓</div>
+                    <h5 class="result-card__title">Trained University Staff</h5>
+                    <p class="result-card__text">Educators and administrators skilled in sustainability practices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Latest News Grid -->
-<section class="news-section py-5 position-relative">
-    @Html.Partial("_LatestNewsGrid", Model)
+<!-- CONSORTIUM -->
+<section id="consortium" class="content-section consortium animate-on-scroll">
+    <div class="container">
+        <h2 class="section-title">Consortium</h2>
+        <div class="section-divider"></div>
+
+        <p class="section-text mb-4">
+            UNIGreen brings together a dynamic consortium of partners representing academia, research,
+            and innovation sectors across Europe and the Western Balkans.
+        </p>
+
+        <div class="partners-slider">
+            <div class="partners-slider__track">
+                <div class="partner-card">
+                    <img src="/images/logos/aab.png" alt="AAB College" />
+                    <div class="partner-card__name">AAB College</div>
+                </div>
+                <div class="partner-card">
+                    <img src="/images/logos/uet.png" alt="European University of Tirana" />
+                    <div class="partner-card__name">European University of Tirana</div>
+                </div>
+                <div class="partner-card">
+                    <img src="/images/logos/psw.png" alt="PSW University" />
+                    <div class="partner-card__name">PSW University (Poland)</div>
+                </div>
+                <div class="partner-card">
+                    <img src="/images/logos/ihu.png" alt="International Hellenic University" />
+                    <div class="partner-card__name">International Hellenic University</div>
+                </div>
+
+                <!-- duplicates for infinite looping -->
+                <div class="partner-card">
+                    <img src="/images/logos/aab.png" alt="AAB College" />
+                    <div class="partner-card__name">AAB College</div>
+                </div>
+                <div class="partner-card">
+                    <img src="/images/logos/uet.png" alt="European University of Tirana" />
+                    <div class="partner-card__name">European University of Tirana</div>
+                </div>
+                <div class="partner-card">
+                    <img src="/images/logos/psw.png" alt="PSW University" />
+                    <div class="partner-card__name">PSW University (Poland)</div>
+                </div>
+                <div class="partner-card">
+                    <img src="/images/logos/ihu.png" alt="International Hellenic University" />
+                    <div class="partner-card__name">International Hellenic University</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

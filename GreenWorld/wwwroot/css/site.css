@@ -17,10 +17,6 @@ html {
     min-height: 100%;
 }
 
-body {
-    margin-bottom: 60px;
-}
-
 .news-section {
     background: linear-gradient(135deg, #1a1a1a12 0%, #2c2c2c00 100%);
     position: relative;

@@ -4,146 +4,145 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GreenWorld</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Green World - Leading the way in environmental journalism, sustainability news, and eco-friendly initiatives. Together for a greener future." />
-    <meta name="keywords" content="environment, sustainability, clean energy, recycling, forest protection, ocean conservation, eco news" />
-    <meta name="author" content="Green World" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow" />
+    <title>@ViewData["Title"] - UNIGreen</title>
 
-    <!-- Open Graph / Facebook -->
+    <!-- SEO -->
+    <meta name="description" content="UNIGreen – Transforming Higher Education for a Greener Tomorrow." />
+    <meta name="keywords" content="UNIGreen, sustainability, Erasmus+, CBHE, green universities, Western Balkans" />
+    <meta name="author" content="UNIGreen Project" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.greenworld.eco/" />
-    <meta property="og:title" content="Green World - Sustainability & Environmental News" />
-    <meta property="og:description" content="Stay informed with the latest environmental news, green policies, clean energy, and sustainability tips." />
-    <meta property="og:image" content="https://www.greenworld.eco/images/greenworld-og.jpg" />
+    <meta property="og:title" content="UNIGreen Project" />
+    <meta property="og:description" content="Sustainability-driven transformation for Higher Education Institutions." />
+    <meta property="og:image" content="/images/unigreen-og.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://www.greenworld.eco/" />
-    <meta name="twitter:title" content="Green World - Sustainability & Environmental News" />
-    <meta name="twitter:description" content="Stay informed with the latest environmental news, green policies, clean energy, and sustainability tips." />
-    <meta name="twitter:image" content="https://www.greenworld.eco/images/greenworld-og.jpg" />
 
-    <!-- Structured Data for Googlebot -->
-    <script type="application/ld+json">
-        @Html.Raw(@"{
-          ""@context"": ""https://schema.org"",
-          ""@type"": ""Organization"",
-          ""name"": ""Green World"",
-          ""url"": ""https://www.greenworld.eco"",
-          ""logo"": ""https://www.greenworld.eco/images/logo.png"",
-          ""sameAs"": [
-            ""https://www.facebook.com/greenworld"",
-            ""https://twitter.com/greenworld"",
-            ""https://www.instagram.com/greenworld"",
-            ""https://www.linkedin.com/company/greenworld"",
-            ""https://www.youtube.com/greenworld""
-          ]
-        }")
-    </script>
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
-
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Project Styles -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/custome/css/cssStyle.css" asp-append-version="true" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/custome/css/projectStructure.css" asp-append-version="true" />
+
 </head>
 
-<body>
+<body class="w-100">
+
+    <!-- ================= NAVBAR ================= -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-custom">
+        <nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
             <div class="container">
-                <a class="navbar-brand" asp-action="Index">
-                    <i class="fas fa-leaf"></i>
-                    Green World
+
+                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                    <i class="fa-solid fa-leaf me-2"></i> UNIGreen
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+
+                    <ul class="navbar-nav ms-auto gap-lg-3">
+
                         <li class="nav-item">
-                            <a class="nav-link" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#news">News</a>
+                            <a class="nav-link" href="/Home/About">About</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#environment">Environment</a>
+                            <a class="nav-link" href="/#structure">Work Packages</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#sustainability">Sustainability</a>
+                            <a class="nav-link" href="/#consortium">Partners</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact</a>
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
         </nav>
     </header>
-    <div class="">
-        <main role="main" class="mh-80">
-            @RenderBody()
-        </main>
-    </div>
 
+
+    <!-- ================= BODY ================= -->
+    <main role="main" class="min-vh-80" >
+        @RenderBody()
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
     <footer id="contact" class="footer-section">
         <div class="container">
+
             <div class="footer-content">
+
+                <!-- Column 1 -->
                 <div>
-                    <h5><i class="fas fa-leaf me-2"></i>Green World</h5>
-                    <p>Leading the way in environmental journalism and sustainability awareness. Together, we're building a greener future for all.</p>
+                    <h5 class="fw-bold">
+                        <i class="fa-solid fa-leaf me-2"></i> UNIGreen
+                    </h5>
+                    <p>
+                        Transforming Higher Education through sustainability, innovation, and collaboration.
+                    </p>
+
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-               <div></div>
+
+                <!-- Column 2 -->
                 <div>
-                    <h5>Categories</h5>
-                    <div class="d-flex flex-column gap-2">
-                        <a href="#">🌍 Environmental Policy</a>
-                        <a href="#">🔋 Clean Energy</a>
-                        <a href="#">🌊 Ocean Conservation</a>
-                        <a href="#">🌳 Forest Protection</a>
-                        <a href="#">♻️ Recycling & Waste</a>
-                    </div>
+                    <h5 class="fw-bold mb-3">Navigation</h5>
+                    <a href="/#about">About</a>
+                    <a href="/#structure">Work Packages</a>
+                    <a href="/#partners">Partners</a>
+                    <a href="/#news">News</a>
                 </div>
+
+                <!-- Column 3 -->
                 <div>
-                    <h5>Contact Info</h5>
-                    <div class="d-flex flex-column gap-2">
-                        <div><i class="fas fa-envelope me-2"></i>info@greenworld.eco</div>
-                        <div><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</div>
-                        <div><i class="fas fa-map-marker-alt me-2"></i>123 Eco Street, Green City, GC 12345</div>
-                    </div>
+                    <h5 class="fw-bold mb-3">Contact Info</h5>
+
+                    <div><i class="fa-solid fa-envelope me-2"></i> projects@unigreen.org</div>
+                    <div><i class="fa-solid fa-phone me-2"></i> +383 (0) 49 123 456</div>
+                    <div><i class="fa-solid fa-location-dot me-2"></i> Prishtina, Kosovo</div>
                 </div>
+
             </div>
-            <div class="text-center pt-3 mt-3" style="border-top: 1px solid rgba(255,255,255,0.1);">
-                <p>&copy; 2024 Green World. All rights reserved. Made with 💚 for our planet.</p>
+
+            <div class="text-center pt-4 mt-4 border-top border-light">
+                <p class="mb-0">&copy; @DateTime.Now.Year UNIGreen. All rights reserved.</p>
             </div>
+
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/custome/js/post.js" asp-append-version="true"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-
-
 
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
+
 </html>

@@ -28,7 +28,7 @@ namespace GreenWorld.Controllers
         {
             return View();
         }
-        public IActionResult Privacy()
+        public IActionResult ExpectedResult()
         {
             return View();
         }
